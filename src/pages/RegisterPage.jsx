@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button"
 import { useRegisterUsersMutation } from "@/store";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
+import Logo from "@/components/demo/Logo";
 
 const RegisterPage = () => {
   const navigate = useNavigate();
@@ -40,39 +41,39 @@ const RegisterPage = () => {
 }
 
   return (
-    <div className="px-16 pt-8 mx-64 mt-16 h-[500px] ">
+    <div className="absolute top-[52%] left-[50%] translate-x-[-50%] translate-y-[-50%] pb-6">
       <div className="my-4">
-        <h1 className="text-3xl">Logo</h1>
-        <div className="my-4 py-2">
-          <h1 className="text-3xl font-bold mb-2">Register</h1>
+      <Link to={'/'} className="flex justify-center"><Logo width={150}/></Link>
+        <div className="py-2">
+          <h1 className="text-3xl mb-2 font-mono font-black">Register</h1>
           <p className="text-md text-slate-400">Enter your details to create your account and enjoy our services.</p>  
         </div>
       </div>
       <form onSubmit={handleForm}>
-        <div className="grid grid-cols-2 my-6">
-          <div className="grid grid-cols-1 my-2 ">
-            <label className="text-lg mb-2">Full name</label>
-            <input type="text" className="w-64 rounded-l-lg p-2 shadow-xl bg-transparent" placeholder="name" value={data.name} name={"name"} onChange={handleInput}/>
+        <div className="flex flex-col items-center gap-1">
+          <div className="flex flex-col">
+            <label className="font-black font-mono">Full name:</label>
+            <input type="text" className="w-64 rounded-l-lg p-2 shadow-xl bg-transparent border-2"  value={data.name} name={"name"} onChange={handleInput}/>
           </div>
-          <div className="grid grid-cols-1 my-2 ml-28">
-            <label className="text-lg mb-2">Email</label>
-            <input type="email" className="w-64 rounded-l-lg p-2 shadow-xl bg-transparent" placeholder="email" value={data.email} name="email" onChange={handleInput}/>
+          <div className="flex flex-col">
+            <label className="font-black font-mono">Email:</label>
+            <input type="email" className="w-64 rounded-l-lg p-2 shadow-xl bg-transparent border-2"  value={data.email} name="email" onChange={handleInput}/>
           </div>
-          <div className="grid grid-cols-1 my-2 ">
-            <label className="text-lg mb-2">Password</label>
-            <input type="password" className="w-64 rounded-l-lg p-2 shadow-xl bg-transparent" placeholder="password" value={data.password} name="password"onChange={handleInput}/>
+          <div className="flex flex-col">
+            <label className="font-black font-mono">Password:</label>
+            <input type="password" className="w-64 rounded-l-lg p-2 shadow-xl bg-transparent border-2"  value={data.password} name="password"onChange={handleInput}/>
           </div>
-          <div className="grid grid-cols-1 my-2 ml-28">
-            <label className="text-lg mb-2">Password confirmation</label>
-            <input type="password" className="w-64 rounded-l-lg p-2 shadow-xl bg-transparent" placeholder="confirmation" name="passwordConfirmation" value={data.passwordConfirmation} onChange={handleInput}/>
+          <div className="flex flex-col">
+            <label className="font-black font-mono">Password confirmation:</label>
+            <input type="password" className="w-64 rounded-l-lg p-2 shadow-xl bg-transparent border-2"  name="passwordConfirmation" value={data.passwordConfirmation} onChange={handleInput}/>
           </div>
         </div>
-        <div className="flex justify-center mt-16">
-          <Button>Confirm</Button>
+        <div className="flex justify-center mt-10">
+          <Button className="px-10">Create</Button>
         </div>
       </form>
       <div className="flex justify-center mt-6">
-        <Link to={'/login'} className="text-sm hover:text-blue-500">I have already an account</Link>
+        <Link to={'/login'} className="text-sm hover:text-blue-500 underline font-mono">I have already an account</Link>
       </div>
     </div>
   )
