@@ -28,8 +28,9 @@ const LoginPage = () => {
 
     try {
       const res = await loginUsers(data);
-      const accessToken = res.access_token;
-      localStorage.setItem('accessToken', accessToken);
+      console.log(res)
+      // const accessToken = res.access_token;
+      // localStorage.setItem('accessToken', accessToken);
 
     } catch (err) {
       console.log(err);
