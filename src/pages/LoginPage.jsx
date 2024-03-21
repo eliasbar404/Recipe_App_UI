@@ -28,7 +28,8 @@ const LoginPage = () => {
 
     try {
       const res = await loginUsers(data);
-      const accessToken = res.access_token;
+      console.log(res);
+      const accessToken = res.data.access_token;
       localStorage.setItem('accessToken', accessToken);
 
     } catch (err) {
@@ -41,11 +42,12 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="px-16 pt-8 mx-[500px] h-[500px]">
-      <div className="flex justify-center">
-        <Link to={'/'}><Logo width={150}/></Link>
-        
-        {/* <h1 className="text-3xl font-bold mb-2">Log in</h1>   */}
+    <div className="absolute top-[52%] left-[50%] translate-x-[-50%] translate-y-[-50%] pb-4">
+      <div className="my-2">
+        <Link to={'/'} className="flex justify-center"><Logo width={100}/></Link>
+        <div className="flex justify-center py-2">
+          <h1 className="text-3xl mb-2 font-mono font-black">Log in</h1>  
+        </div>
       </div>
 
       <form onSubmit={handleForm}>

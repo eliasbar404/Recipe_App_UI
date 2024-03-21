@@ -4,7 +4,7 @@ const loginApi = createApi({
   reducerPath: 'login',
 
   baseQuery: fetchBaseQuery({
-    baseUrl: '',
+    baseUrl: 'https://stoic-book-production.up.railway.app/api/auth/',
   }),
 
   endpoints (builder) {
@@ -13,6 +13,7 @@ const loginApi = createApi({
         query: (data) => {
           return {
             url: '/login',
+            method: 'POST',
             headers: {
               'Content-Type': 'application/json'
             },

@@ -16,6 +16,15 @@ module.exports = {
         "2xl": "1400px",
       },
     },
+    screens: {
+      'sm': '576px',
+
+      'md': '850px',
+
+      'lg': '1100px',
+
+      'xl': '1350px'
+    },
     extend: {
       keyframes: {
         "accordion-down": {
@@ -30,6 +39,9 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      fontFamily: {
+        "resipes": "Poppins",
       },
     },
   },
