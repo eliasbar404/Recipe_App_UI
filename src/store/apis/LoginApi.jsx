@@ -12,8 +12,8 @@ const loginApi = createApi({
       loginUsers: builder.mutation({
         query: (data) => {
           return {
-            url: '/login',
-            method: 'POST',
+            url: 'https://stoic-book-production.up.railway.app/api/auth/login',
+            method:"POST",
             headers: {
               'Content-Type': 'application/json'
             },
