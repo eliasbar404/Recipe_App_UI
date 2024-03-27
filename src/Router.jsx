@@ -5,6 +5,7 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import AdminLogin from "./pages/admin/AdminLogin";
 import CreateRecipe from "./pages/admin/CreateRecipe";
+import RecipePage from './pages/ResipePage';
 
 const Router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const Router = createBrowserRouter([
   {
     path:"/admin/recipe/create",
     element:<CreateRecipe/>
+  },
+  {
+    path:"/recipes",
+    element:<RecipePage/>
   }
 ]);
 
